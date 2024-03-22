@@ -1,4 +1,5 @@
 import React from "react";
+import SectionTitle from "../Home/SectionTitle/SectionTitle";
 
 const CategoryList = () => {
   return (

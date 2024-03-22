@@ -2,9 +2,9 @@ import React from "react";
 
 const SectionTitle = ({ sectionTitle, sectionDesc }) => {
   return (
-    <div>
-      <h2 className="text-5xl font-bold text-center">{sectionTitle}</h2>
-      <p className="text-xl text-center">{sectionDesc}</p>
+    <div className="text-center">
+      <h2 className="text-5xl font-bold ">{sectionTitle}</h2>
+      <p className="text-xl">{sectionDesc}</p>
     </div>
   );
 };
