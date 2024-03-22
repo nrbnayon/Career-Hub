@@ -20,9 +20,9 @@ const NotFoundPage = () => {
             Blogs
           </button>
         </NavLink>
-        <NavLink to="/products" className="btn">
+        <NavLink to="/jobs" className="btn">
           <button className="px-4 py-2 bg-blue-500 text-white rounded-md shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-            Products
+            Jobs
           </button>
         </NavLink>
       </div>
