@@ -1,9 +1,11 @@
 import React from "react";
 import { IoLocationOutline } from "react-icons/io5";
 import { CiDollar } from "react-icons/ci";
+import { NavLink } from "react-router-dom";
 
 const FeatureJob = ({ job }) => {
   const {
+    id,
     logo,
     job_title,
     company_name,
@@ -13,7 +15,7 @@ const FeatureJob = ({ job }) => {
     salary,
   } = job;
   return (
-    <div className="card md:w-96 bg-base-100 shadow-xl">
+    <div className="card bg-base-100 shadow-xl">
       <figure className="p-4 mt-6 self-start">
         <img src={logo} className="rounded-xl" />
       </figure>
@@ -32,7 +34,9 @@ const FeatureJob = ({ job }) => {
             {<CiDollar />} Salary: {salary}
           </p>
         </div>
-        <button className="btn btn-info my-2">View Details</button>
+        <NavLink to={`/job/${id}`} className="btn btn-info my-2">
+          View Details
+        </NavLink>
       </div>
     </div>
   );

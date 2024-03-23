@@ -4,11 +4,16 @@ import FeatureJob from "./FeatureJob";
 
 const FeaturedJobs = () => {
   const [jobs, setJobs] = useState([]);
+  const [showAllJobs, setShowAllJobs] = useState(false);
+
   useEffect(() => {
     fetch("/jobs.json")
       .then((res) => res.json())
       .then((data) => setJobs(data));
   }, []);
+
+  const displayedJobs = showAllJobs ? jobs : jobs.slice(0, 4);
+
   return (
     <div>
       <SectionTitle
@@ -18,11 +23,18 @@ const FeaturedJobs = () => {
         }
       />
       <div>
-        {/* <p className="text-center">Available Jobs: {jobs.length}</p> */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
-          {jobs.map((job) => (
+          {displayedJobs.map((job) => (
             <FeatureJob key={job.id} job={job} />
           ))}
+        </div>
+        <div className="text-center">
+          <button
+            onClick={() => setShowAllJobs((prev) => !prev)}
+            className="btn btn-primary"
+          >
+            {showAllJobs ? "Show Less" : "Show All Jobs"}
+          </button>
         </div>
       </div>
     </div>
